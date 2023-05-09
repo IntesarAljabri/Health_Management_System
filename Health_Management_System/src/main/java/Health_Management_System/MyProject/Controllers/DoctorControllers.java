@@ -10,15 +10,15 @@ import java.util.List;
 @RequestMapping(value = "doctor")
 public class DoctorControllers {
     @Autowired
-    DoctorServices doctorervices;
+    DoctorServices doctorServices;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public <Doctor> List<Doctor> getAllDoctors() {
 
-        return doctorServices.getAllDoctors();
+        return doctorServices.getAllDoctor();
     }
     @GetMapping(value = "getById")
     public <Doctor> Doctor getDoctorById(@RequestParam Integer id) {
 
-        return doctorServices.getDoctorById(id);
+        return (Doctor) doctorServices.getDoctorById(id);
     }
 }
